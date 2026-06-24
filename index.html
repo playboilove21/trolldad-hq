@@ -6,146 +6,203 @@
 <title>TrollDad HQ</title>
 
 <style>
-/* RESET */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: 'Segoe UI', Arial, sans-serif;
+:root{
+    --black:#05070f;
+    --blue:#1e90ff;
+    --white:#ffffff;
+    --glow:0 0 15px rgba(30,144,255,0.6);
 }
 
-body {
-    background: #05050a;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background: radial-gradient(circle at top, #0a0f1f, var(--black));
+    color:var(--white);
+    overflow-x:hidden;
+}
+
+/* ===== TICKER ===== */
+.ticker {
+    width: 100%;
+    overflow: hidden;
+    background: linear-gradient(90deg, #000, #1e90ff, #000);
+    border-bottom: 1px solid rgba(30,144,255,0.5);
+    padding: 8px 0;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+.ticker-text {
+    display: inline-block;
+    white-space: nowrap;
+    font-weight: 900;
     color: white;
-    overflow-x: hidden;
+    text-shadow: 0 0 10px #1e90ff;
+    animation: scrollLeft 12s linear infinite;
 }
 
-/* COLORS */
-:root {
-    --pink: #ff007f;
-    --cyan: #00ffff;
-    --purple: #9400d3;
+@keyframes scrollLeft {
+    from { transform: translateX(100%); }
+    to { transform: translateX(-100%); }
 }
 
 /* HEADER */
-header {
-    text-align: center;
-    padding: 50px 20px;
+header{
+    text-align:center;
+    padding:50px 20px;
 }
 
-.glitch-text {
-    font-size: 3rem;
-    font-weight: 900;
-    text-shadow: 2px 2px var(--pink), -2px -2px var(--cyan);
+h1{
+    font-size:3rem;
+    font-weight:900;
+    text-shadow:var(--glow);
 }
 
-/* HERO BOX */
-.hero-bio {
-    max-width: 700px;
-    margin: 20px auto;
-    padding: 20px;
-    background: rgba(20,20,40,0.8);
-    border: 1px solid rgba(0,255,255,0.3);
-    border-radius: 15px;
+.subtitle{
+    color:var(--blue);
+    margin-top:10px;
+    font-weight:600;
 }
 
-.hero-bio p {
-    margin: 8px 0;
-    font-weight: 600;
+/* HERO */
+.hero{
+    max-width:750px;
+    margin:25px auto;
+    padding:20px;
+    border:1px solid rgba(30,144,255,0.4);
+    border-radius:15px;
+    background:rgba(10,15,30,0.8);
+    box-shadow:var(--glow);
 }
 
-/* FANCY BUTTON */
-.x-button {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 15px 30px;
-    font-size: 1rem;
-    font-weight: 900;
-    color: white;
-    text-decoration: none;
-    border-radius: 50px;
-    background: linear-gradient(45deg, black, #111, #222);
-    border: 2px solid var(--cyan);
-    box-shadow: 0 0 15px rgba(0,255,255,0.5);
-    transition: 0.3s;
+.hero p{
+    margin:8px 0;
+    font-weight:600;
 }
 
-.x-button:hover {
-    transform: scale(1.08);
-    box-shadow: 0 0 25px var(--cyan);
+.x-button{
+    display:inline-block;
+    margin-top:18px;
+    padding:14px 28px;
+    border-radius:50px;
+    text-decoration:none;
+    color:white;
+    font-weight:900;
+    background:linear-gradient(45deg,#000,#111,#1e90ff);
+    border:1px solid var(--blue);
+    box-shadow:var(--glow);
+    transition:0.3s;
 }
 
-/* DASHBOARD */
-.token {
-    margin: 30px auto;
-    padding: 20px;
-    max-width: 800px;
-    border: 2px solid var(--purple);
-    border-radius: 12px;
-    text-align: center;
+.x-button:hover{
+    transform:scale(1.07);
+}
+
+/* TOKEN */
+.token{
+    max-width:800px;
+    margin:40px auto;
+    padding:25px;
+    text-align:center;
+    border:1px solid var(--blue);
+    border-radius:12px;
+    box-shadow:var(--glow);
+}
+
+.token h2{
+    color:var(--blue);
+    margin-bottom:10px;
 }
 
 /* MEMES */
-.memes {
-    text-align: center;
-    margin: 40px 0;
+.memes{
+    text-align:center;
+    margin:50px 0;
 }
 
-.meme-grid {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    flex-wrap: wrap;
+.meme-grid{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:15px;
 }
 
-.meme-grid img {
-    width: 180px;
-    border-radius: 10px;
-    border: 2px solid white;
-    transition: 0.3s;
+.meme-grid img{
+    width:180px;
+    height:180px;
+    object-fit:cover;
+    border-radius:10px;
+    border:2px solid var(--blue);
+    transition:0.3s;
 }
 
-.meme-grid img:hover {
-    transform: scale(1.1);
-    box-shadow: 0 0 15px var(--pink);
+.meme-grid img:hover{
+    transform:scale(1.1);
+    box-shadow:var(--glow);
 }
 
 /* GAME */
-.game {
-    margin: 40px auto;
-    text-align: center;
-    padding: 30px;
-    max-width: 600px;
-    border: 2px dashed var(--cyan);
-    border-radius: 12px;
+.game{
+    max-width:600px;
+    margin:50px auto;
+    padding:30px;
+    text-align:center;
+    border:1px dashed var(--blue);
+    border-radius:12px;
 }
 
-#btn {
-    padding: 15px 25px;
-    font-size: 20px;
-    border: none;
-    border-radius: 50px;
-    background: var(--pink);
-    color: white;
-    cursor: pointer;
-    position: relative;
+#btn{
+    padding:15px 25px;
+    font-size:20px;
+    border:none;
+    border-radius:50px;
+    background:var(--blue);
+    color:white;
+    cursor:pointer;
+    position:relative;
+    font-weight:800;
 }
 
-footer {
-    text-align: center;
-    padding: 30px;
-    opacity: 0.6;
+/* FOOTER */
+footer{
+    text-align:center;
+    padding:30px;
+    opacity:0.7;
+    border-top:1px solid rgba(30,144,255,0.3);
+    margin-top:50px;
+}
+
+/* DISCLAIMER SMALL PRINT */
+.disclaimer{
+    font-size:10px;
+    opacity:0.5;
+    max-width:900px;
+    margin:10px auto 0;
+    line-height:1.4;
 }
 </style>
 </head>
 
 <body>
 
-<header>
-    <h1 class="glitch-text">😂 TrollDad HQ</h1>
-    <p>Meme chaos & fake token energy</p>
+<!-- 🔥 TICKER -->
+<div class="ticker">
+  <div class="ticker-text">
+    🚀 TROLLDAD IS MOVING 🚀 TROLLDAD IS MOVING 🚀 TROLLDAD IS MOVING 🚀 TROLLDAD IS MOVING 🚀
+  </div>
+</div>
 
-    <div class="hero-bio">
+<header>
+    <h1>😂 TrollDad HQ</h1>
+    <div class="subtitle">Meme Coin Energy • Community Driven Chaos</div>
+
+    <div class="hero">
         <p><strong>THEY SAID SELL... WE SAID HOLD.</strong></p>
         <p>No panic. No fear.</p>
         <p>Just memes, community, and conviction.</p>
@@ -153,14 +210,9 @@ footer {
         <p>Welcome to the TrollDad Army 🔥</p>
         <p><strong>#TrollDad</strong></p>
 
-        <!-- ONLY ONE BUTTON -->
-        <a href="https://x.com/killzxer0?s=21" target="_blank" class="x-button">
+        <a class="x-button" href="https://x.com/killzxer0?s=21" target="_blank">
             🚀 JOIN THE TROLLDAD ARMY ON 𝕏
         </a>
-
-        <p style="margin-top:15px; color:#00ffff;">
-            MEMES • COMMUNITY • CHAOS • HOLD THE LINE
-        </p>
     </div>
 </header>
 
@@ -181,7 +233,7 @@ footer {
 
 <section class="game">
     <h2>🎮 Catch TrollDad</h2>
-    <p>Click the button to score</p>
+    <p>Click fast before he escapes</p>
 
     <button id="btn">👴 CLICK ME</button>
     <p>Score: <span id="score">0</span></p>
@@ -189,6 +241,12 @@ footer {
 
 <footer>
     © TrollDad HQ • Built for meme degenerates only
+
+    <div class="disclaimer">
+        Disclaimer: The “Holders”, “Memes”, and “Mood” stats are for entertainment and TrollDad HQ vibes only. 
+        They do not represent real investment data, ownership numbers, or financial metrics. 
+        This is a community meme project built for fun, chaos, and culture — not financial tracking or guarantees.
+    </div>
 </footer>
 
 <script>
@@ -201,7 +259,7 @@ btn.addEventListener("click", () => {
     scoreText.innerText = score;
 
     btn.style.left = Math.random() * 200 + "px";
-    btn.style.top = Math.random() * 100 + "px";
+    btn.style.top = Math.random() * 120 + "px";
 });
 </script>
 
