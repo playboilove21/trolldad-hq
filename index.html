@@ -263,7 +263,40 @@
             color: #606070;
             font-size: 0.95rem;
         }
+.hero-bio{
+    max-width:700px;
+    margin:25px auto 0;
+    padding:20px;
+    background:rgba(15,15,30,.85);
+    border:1px solid rgba(0,255,255,.3);
+    border-radius:16px;
+    backdrop-filter:blur(10px);
+}
 
+.hero-bio p{
+    margin:8px 0;
+    font-weight:600;
+}
+
+.x-button{
+    display:inline-block;
+    margin-top:20px;
+    padding:14px 28px;
+    text-decoration:none;
+    color:white;
+    font-weight:800;
+    font-size:1rem;
+    border-radius:50px;
+    background:linear-gradient(45deg,#000,#111,#222);
+    border:2px solid var(--cyan);
+    box-shadow:0 0 15px rgba(0,255,255,.4);
+    transition:.3s;
+}
+
+.x-button:hover{
+    transform:translateY(-3px) scale(1.05);
+    box-shadow:0 0 25px var(--cyan);
+}
         /* --- RESPONSIVE DESIGN --- */
         @media (max-width: 768px) {
             header h1 { font-size: 2.5rem; }
@@ -278,9 +311,35 @@
 
     <div class="container">
         <header>
-            <h1 class="glitch-text">😂 TrollDad HQ</h1>
-            <p>Meme chaos &amp; fake token energy</p>
-        </header>
+    <h1 class="glitch-text">😂 TrollDad HQ</h1>
+    <p>Meme chaos &amp; fake token energy</p>
+
+    <div class="hero-bio">
+        <p><strong>THEY SAID SELL... WE SAID HOLD.</strong></p>
+        <p>No panic. No fear.</p>
+        <p>Just memes, community, and conviction.</p>
+        <p>We're building the rocket 🚀</p>
+        <p>Welcome to the TrollDad Army 🔥</p>
+        <p><strong>#TrollDad</strong></p>
+
+        <a href="https://x.com/killzxer0?s=21" target="_blank" class="x-button">
+            🚀 JOIN THE TROLLDAD ARMY ON 𝕏
+        </a>
+        <div class="hero-bio">
+    <p><strong>THEY SAID SELL... WE SAID HOLD.</strong></p>
+    <p>No panic. No fear.</p>
+
+    <a href="https://x.com/killzxer0?s=21" target="_blank" class="x-button">
+        🚀 JOIN THE TROLLDAD ARMY ON 𝕏
+    </a>
+
+    <!-- 👇 THIS IS “UNDER THE BUTTON” -->
+    <p style="margin-top:15px; color:#00ffff; font-weight:700;">
+        🚀 MEMES • COMMUNITY • CHAOS • HOLD THE LINE
+    </p>
+</div>
+    </div>
+</header>
 
         <section class="dashboard-section">
             <div class="dashboard-card">
